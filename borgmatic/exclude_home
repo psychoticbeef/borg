@@ -1,0 +1,15 @@
+*/.CloudStation/*
+*/.cpan/*
+*/.local/share/Steam/steamapps/*
+*/.local/share/Zeal/*
+*/.mail/*
+*/.mozilla/firefox/*/extensions/*
+*/.mozilla/firefox/*/storage/*
+*/.PlayOnLinux/*
+*/.thunderbird/*/ImapMail/*
+*/.vagrant.d/*
+*/.vscode/extensions/*
+*/Downloads/*
+*/Pictures/*
+*/Virtualbox VMs/*
+*/PlayOnLinux's virtual drives/*

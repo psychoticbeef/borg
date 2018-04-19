@@ -1,0 +1,39 @@
+location:
+    source_directories:
+        - /home
+
+    one_file_system: true
+
+    repositories:
+        - ssh://.your-storagebox.de:23/./backups/
+
+    exclude_from:
+        - /etc/borgmatic/exclude_home
+        - /etc/borgmatic/exclude_shared
+
+    exclude_caches: true
+    exclude_if_present: .nobackup
+
+storage:
+    encryption_passcommand: /usr/bin/secret-tool lookup borg-hetzner- 
+
+    compression: zstd
+    lock_wait: 1200
+    archive_name_format: '{hostname}-home-{now:%Y-%m-%d-%H}'
+
+retention:
+    keep_hourly: 24
+    keep_daily: 7
+    keep_weekly: 4
+    keep_monthly: 12
+    keep_yearly: 2
+
+    prefix: '{hostname}-home-'
+
+hooks:
+    before_backup:
+        - /usr/local/bin/wait_for_wifi.sh ; /usr/bin/borg --version
+
+    on_error:
+        - /usr/local/bin/notify_all.sh 'borgmatic' 'hourly-error'
+

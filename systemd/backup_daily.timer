@@ -1,0 +1,10 @@
+[Unit]
+Description=BorgBackup daily
+Documentation=man:borg
+
+[Timer]
+OnCalendar=daily
+RandomizedDelaySec=1h
+
+[Install]
+WantedBy=timers.target

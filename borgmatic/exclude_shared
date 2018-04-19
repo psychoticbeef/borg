@@ -1,0 +1,12 @@
+*/.DS_Store
+*/.Trashes
+*/._.Trashes
+*/.cache/*
+*/.fseventds
+*/.pki/*
+*/Desktop.ini
+*/Spotlight-V100
+*/Thumbs.db
+*/gdrive/*
+*/nobackup/*
+*/tmp/*

@@ -1,0 +1,6 @@
+#!/bin/bash -e
+export SSHPASS=
+sshpass -e sftp -oBatchMode=no -b - .your-storagebox.de << ! |tail -n 1|awk '{printf "%s/%s", $2, $1}'|tee /tmp/.storage_usage
+        df -h
+!
+export SSHPASS=

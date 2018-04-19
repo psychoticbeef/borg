@@ -1,0 +1,12 @@
+[Unit]
+Description=BorgBackup Hourly
+Requires=network-online.target
+
+[Service]
+Environment=DISPLAY=:0
+Type=oneshot
+ExecStart=/usr/bin/borgmatic -v 1 -c /etc/borgmatic.d/home.yml 
+
+[Install]
+WantedBy=timers.target
+
